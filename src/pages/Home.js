@@ -10,6 +10,7 @@ import Female4 from '../assets/female-glasses/4.jpg' ;
 import Antiblue1 from '../assets/anti-blue-light/1.jpg' ;
 import Antiblue2 from '../assets/anti-blue-light/2.jpg' ;
 import Antiblue3 from '../assets/anti-blue-light/3.jpg' ;
+import Background from '../assets/background/bg.png' ;
 
 function Home() {
   return (
@@ -23,7 +24,13 @@ function Home() {
                 <p>Kids</p>
                 <p>unisex</p>
             </div>
-            <div className="basis-2/4 bg-[#051D4C] shadow-xl rounded-xl"></div>
+            <div className="flex relative basis-2/4 bg-[#051D4C] shadow-xl rounded-xl">
+                <div className='uppercase absolute top-24 left-10 text-white font-bold w-10'>Latest Transparent Glasses</div>
+                <img className="w-60 h-80 absolute -top-8 left-56" src={Background} alt="hands up with glasses" />
+                <div className='absolute bottom-0 right-0'>
+                    <button className='text-xl bg-white text-black px-6 py-5 uppercase font-semibold'>Shop Now</button>
+                </div>
+            </div>
             <div className="basis-1/4 grid pl-20 py-12 shadow-xl rounded-xl">
                 <p className='font-semibold mb-8'>Categories</p>
                 <p>Anti-Bluelight</p>
