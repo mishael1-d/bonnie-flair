@@ -1,5 +1,7 @@
 import React from 'react'
 import Shade from '../assets/anti-blue-light/1.jpg' ;
+import Shade2 from '../assets/female-glasses/1.jpg' ;
+import Shade3 from '../assets/male-glasses/1.jpg' ;
 
 function Home() {
   return (
@@ -37,29 +39,29 @@ function Home() {
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$14</p>
+                    </div>
+                </div>
+                <div className='text-left'>
+                    <img className='' src={Shade2} alt="anti-blue light glasses" />
+                    <div className='ml-7'>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$22</p>
                     </div>
                 </div>
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Shade3} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
-                    </div>
-                </div>
-                <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
-                    <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$18</p>
                     </div>
                 </div>
             </div>
@@ -76,31 +78,31 @@ function Home() {
             </div>
             <div className='flex justify-between px-14 py-12 space-x-4'>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Shade2} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$14</p>
                     </div>
                 </div>
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$22</p>
+                    </div>
+                </div>
+                <div className='text-left'>
+                    <img className='' src={Shade3} alt="anti-blue light glasses" />
+                    <div className='ml-7'>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
-                    </div>
-                </div>
-                <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
-                    <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$18</p>
                     </div>
                 </div>
             </div>
@@ -119,29 +121,29 @@ function Home() {
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$14</p>
+                    </div>
+                </div>
+                <div className='text-left'>
+                    <img className='' src={Shade2} alt="anti-blue light glasses" />
+                    <div className='ml-7'>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$22</p>
                     </div>
                 </div>
                 <div className='text-left'>
                     <img className='' src={Shade} alt="anti-blue light glasses" />
-                    <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                    <div className='ml-7 max-w-xs'>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Shade3} alt="anti-blue light glasses" />
                     <div className='ml-7'>
-                        <p>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
-                    </div>
-                </div>
-                <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
-                    <div className='ml-7'>
-                        <p className=''>Classic designer sunshade for ladies</p>
-                        <p>$14</p>
+                        <p className='text-xl'>Classic designer sunshade for ladies</p>
+                        <p className='font-bold'>$18</p>
                     </div>
                 </div>
             </div>
