@@ -1,7 +1,16 @@
 import React from 'react'
-import Shade from '../assets/anti-blue-light/1.jpg' ;
-import Shade2 from '../assets/female-glasses/1.jpg' ;
-import Shade3 from '../assets/male-glasses/1.jpg' ;
+import Male1 from '../assets/male-glasses/1.jpg' ;
+import Male2 from '../assets/male-glasses/2.jpg' ;
+import Male3 from '../assets/male-glasses/3.jpg' ;
+import Male4 from '../assets/male-glasses/4.jpg' ;
+import Female1 from '../assets/female-glasses/1.jpg' ;
+import Female2 from '../assets/female-glasses/2.jpg' ;
+import Female3 from '../assets/female-glasses/3.jpg' ;
+import Female4 from '../assets/female-glasses/4.jpg' ;
+import Antiblue1 from '../assets/anti-blue-light/1.jpg' ;
+import Antiblue2 from '../assets/anti-blue-light/2.jpg' ;
+import Antiblue3 from '../assets/anti-blue-light/3.jpg' ;
+import Antiblue4 from '../assets/anti-blue-light/4.jpg' ;
 
 function Home() {
   return (
@@ -37,28 +46,28 @@ function Home() {
             </div>
             <div className='flex justify-between px-14 py-12 space-x-4'>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Antiblue1} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$14</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade2} alt="anti-blue light glasses" />
+                    <img className='' src={Antiblue2} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$22</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Antiblue3} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade3} alt="anti-blue light glasses" />
+                    <img className='' src={Antiblue4} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$18</p>
@@ -78,28 +87,28 @@ function Home() {
             </div>
             <div className='flex justify-between px-14 py-12 space-x-4'>
                 <div className='text-left'>
-                    <img className='' src={Shade2} alt="anti-blue light glasses" />
+                    <img className='' src={Female1} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$14</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Female2} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$22</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade3} alt="anti-blue light glasses" />
+                    <img className='' src={Female3} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Female4} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$18</p>
@@ -119,28 +128,28 @@ function Home() {
             </div>
             <div className='flex justify-between px-14 py-12 space-x-4'>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Male1} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$14</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade2} alt="anti-blue light glasses" />
+                    <img className='' src={Male2} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$22</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade} alt="anti-blue light glasses" />
+                    <img className='' src={Male3} alt="anti-blue light glasses" />
                     <div className='ml-7 max-w-xs'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$12</p>
                     </div>
                 </div>
                 <div className='text-left'>
-                    <img className='' src={Shade3} alt="anti-blue light glasses" />
+                    <img className='' src={Male4} alt="anti-blue light glasses" />
                     <div className='ml-7'>
                         <p className='text-xl'>Classic designer sunshade for ladies</p>
                         <p className='font-bold'>$18</p>
