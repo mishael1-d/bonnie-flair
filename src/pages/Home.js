@@ -13,7 +13,7 @@ function Home() {
                 <p>Kids</p>
                 <p>unisex</p>
             </div>
-            <div className="basis-2/4 bg-[#051D4C] shadow-xl rounded-xl">02</div>
+            <div className="basis-2/4 bg-[#051D4C] shadow-xl rounded-xl"></div>
             <div className="basis-1/4 grid pl-20 py-12 shadow-xl rounded-xl">
                 <p className='font-semibold mb-8'>Categories</p>
                 <p>Anti-Bluelight</p>
