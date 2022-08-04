@@ -6,8 +6,8 @@ function Navbar({ fixed }) {
   return (
     <div>
       <nav className="mb-10 shadow-3xl">
-        <div className="max-w-full mx-auto flex items-center px-20 py-11">
-          <div className="">
+        <div className="flex items-center px-20 py-11">
+          <div className="basis-1/4">
             <div className="text-2xl font-bold text-justify inline-block py-2 whitespace-nowrap">
               <div><p className="font-['Montserrat'] font-normal">Bonnie's</p> <p className="font-['Montserrat'] tracking-[.5em]">Flair</p></div>
             </div>
@@ -26,8 +26,8 @@ function Navbar({ fixed }) {
             }
             id="example-navbar-danger"
           >
-            <ul className="flex flex-col items-center ml-auto lg:flex-row list-none">
-              <li className="nav-item">
+            <ul className="flex basis-3/4 w-full flex-col items-center ml-auto lg:flex-row list-none">
+              <li className="nav-item basis-3/5">
                   <form className="flex items-center">   
                       <label htmlFor="voice-search" className="sr-only">Search</label>
                       <div className="relative w-full">
@@ -41,14 +41,14 @@ function Navbar({ fixed }) {
                       </button>
                   </form>
               </li>
-              <li className="nav-item">
+              <li className="nav-item basis-1/5">
               <button type="submit" className="flex items-center space-x-2 uppercase py-3 px-4 ml-5 text-xl font-medium border rounded-lg">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>
               <span>Account</span>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               </li>
-              <li className="nav-item">
+              <li className="nav-item basis-1/5">
                 <p
                   className="px-3 py-2 flex items-center text-xl hover:opacity-75"
                 >
