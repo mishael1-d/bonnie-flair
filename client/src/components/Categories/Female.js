@@ -7,7 +7,7 @@ import Female4 from "../../assets/female-glasses/4.jpg";
 function Female() {
   return (
     <>
-      <div className="mt-10 shadow-xl rounded-l-2xl ml-1">
+      <div className="mt-10 shadow-xl rounded-l-2xl ml-1 relative">
         <div className="rounded-tl-2xl bg-[#051D4C]">
           <div className="px-20 flex justify-between items-center py-5 text-white text-xl">
             <div>Female Glasses</div>

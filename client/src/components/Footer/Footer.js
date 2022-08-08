@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <footer className="mt-10 bg-black text-white py-10 px-20">
+      <footer className="mt-10 bg-black text-white py-10 px-20 relative bottom-0 right-0 left-0">
         <div className="flex justify-between">
           <div className="">
             <div className="text-1xl mb-4 font-bold font-['Montserrat']">

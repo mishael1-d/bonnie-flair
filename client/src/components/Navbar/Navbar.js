@@ -5,7 +5,7 @@ function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <div>
-      <nav className="mb-10 shadow-3xl h-20">
+      <nav className="mb-10 shadow-lg h-20">
         <div className="flex items-center px-20 py-2">
           <div className="basis-1/4">
             <div className=" font-bold text-justify inline-block py-2 whitespace-nowrap">
@@ -111,6 +111,7 @@ function Navbar({ fixed }) {
                   </svg>
                 </button>
               </li>
+              <Link to='/cart'>
               <li className="nav-item basis-1/5 cursor-pointer">
                 <p className="px-3 py-2 flex items-center text-base hover:opacity-75">
                   <svg
@@ -124,6 +125,7 @@ function Navbar({ fixed }) {
                   <span>Cart</span>
                 </p>
               </li>
+              </Link>
             </ul>
           </div>
         </div>

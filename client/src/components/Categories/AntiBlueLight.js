@@ -6,7 +6,7 @@ import Antiblue3 from "../../assets/anti-blue-light/3.jpg";
 function AntiBlueLight() {
   return (
     <>
-      <div className="mt-10 shadow-xl rounded-l-2xl ml-1">
+      <div className="mt-10 shadow-xl rounded-l-2xl ml-1 relative">
         <div className="rounded-tl-2xl bg-[#051D4C] text-base">
           <div className="px-20 flex justify-between items-center py-5 text-white text-xl">
             <p>Anti-blue light glasses</p>

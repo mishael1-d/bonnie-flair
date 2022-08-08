@@ -3,7 +3,7 @@ import Male2 from "../../assets/male-glasses/2.jpg";
 function Male() {
   return (
     <>
-      <div className="mt-10 shadow-xl rounded-l-2xl ml-1">
+      <div className="mt-10 shadow-xl rounded-l-2xl ml-1 relative">
         <div className="bg-[#051D4C] rounded-tl-2xl">
           <div className="flex justify-between items-center px-20 py-5 text-white text-xl">
             <div>Male Glasses</div>
