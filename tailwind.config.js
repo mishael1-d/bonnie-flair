@@ -11,9 +11,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    $(document).ready(function(){
-      $(".owl-carousel").owlCarousel()
-    })
-  ],
+  plugins: [],
 }
