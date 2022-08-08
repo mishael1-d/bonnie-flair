@@ -5,9 +5,9 @@ function Male() {
     <>
       <div className="mt-10 shadow-xl rounded-l-2xl ml-1">
         <div className="bg-[#051D4C] rounded-tl-2xl">
-          <div className="flex justify-between items-center px-20 py-5 text-white text-xl cursor-pointer">
+          <div className="flex justify-between items-center px-20 py-5 text-white text-xl">
             <div>Male Glasses</div>
-            <div className="flex justify-between items-center space-x-8">
+            <div className="flex justify-between items-center space-x-5 cursor-pointer">
               <p>See All</p>
               <svg
                 className="w-11 h-11"

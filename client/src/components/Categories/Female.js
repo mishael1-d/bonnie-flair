@@ -9,9 +9,9 @@ function Female() {
     <>
       <div className="mt-10 shadow-xl rounded-l-2xl ml-1">
         <div className="rounded-tl-2xl bg-[#051D4C]">
-          <div className="px-20 flex justify-between items-center py-5 text-white text-xl cursor-pointer">
+          <div className="px-20 flex justify-between items-center py-5 text-white text-xl">
             <div>Female Glasses</div>
-            <div className="flex justify-between items-center space-x-9">
+            <div className="flex justify-between items-center space-x-5 cursor-pointer">
               <p>See All</p>
               <svg
                 className="w-11 h-11"
