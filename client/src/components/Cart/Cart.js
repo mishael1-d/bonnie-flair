@@ -1,9 +1,14 @@
 import React from "react";
 import image1 from "../../assets/female-glasses/1.jpg";
-
+import { ToastContainer, toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 function CartPage() {
+
+const delNotify = () => toast.error("Product has been removed from cart");
+const susNotify = () => toast.success("Product has been added to cart successfully");
   return (
     <div className="mt-10">
+      <ToastContainer/>
       <div className="flex px-20">
         <div className="cart basis-3/4 grid px-8 py-5 mr-4 shadow-xl rounded">
           <h3 className="font-semibold">Cart (2)</h3>
@@ -20,15 +25,15 @@ function CartPage() {
               <h3 className="font-bold text-2xl">$14</h3>
             </div>
             <div className="flex justify-between">
-              <p className="font-semibold text-[#051d4c] cursor-pointer hover:opacity-75">
+              <button className="font-semibold text-[#051d4c] cursor-pointer hover:opacity-75" onClick={delNotify}>
                 DELETE
-              </p>
+              </button>
               <div className="flex">
                 <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75">
                   -
                 </button>
                 <p className="mx-4 py-2">1</p>
-                <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75">
+                <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75" onClick={susNotify}>
                   +
                 </button>
               </div>
@@ -47,15 +52,15 @@ function CartPage() {
               <h3 className="font-bold text-2xl">$14</h3>
             </div>
             <div className="flex justify-between">
-              <p className="font-semibold text-[#051d4c] cursor-pointer hover:opacity-75">
+              <button className="font-semibold text-[#051d4c] cursor-pointer hover:opacity-75" onClick={delNotify}>
                 DELETE
-              </p>
+              </button>
               <div className="flex">
                 <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75">
                   -
                 </button>
                 <p className="mx-4 py-2">1</p>
-                <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75">
+                <button className="px-4 py-2 rounded bg-[#051d4c] text-white text-xl hover:opacity-75" onClick={susNotify}>
                   +
                 </button>
               </div>

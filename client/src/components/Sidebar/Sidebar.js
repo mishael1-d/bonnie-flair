@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar({ direction }) {
   return (
@@ -7,9 +8,11 @@ function Sidebar({ direction }) {
         <>
           <div className="basis-1/4 grid pl-20 py-8 shadow-xl rounded-xl">
             <h5 className="font-bold mb-3">Categories</h5>
-            <p className="mb-1 cursor-pointer hover:text-[#051d4c]">
-              All categories
-            </p>
+            <Link to="/shop">
+              <p className="mb-1 cursor-pointer hover:text-[#051d4c]">
+                All categories
+              </p>
+            </Link>
             <p className="mb-1 cursor-pointer hover:text-[#051d4c]">Male</p>
             <p className="mb-1 cursor-pointer hover:text-[#051d4c]">Female</p>
             <p className="mb-1 cursor-pointer hover:text-[#051d4c]">Kids</p>

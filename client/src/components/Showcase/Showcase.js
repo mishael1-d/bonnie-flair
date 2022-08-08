@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Background from "../../assets/background/bg.png";
 function Showcase() {
   return (
@@ -12,11 +13,13 @@ function Showcase() {
           src={Background}
           alt="hands up with glasses"
         />
+        <Link to='/shop'>
         <div className="absolute bottom-0 right-0">
           <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
             Shop Now
           </button>
         </div>
+        </Link>
       </div>
     </>
   );
