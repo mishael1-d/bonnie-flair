@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Dropdown from "./Dropdown";
 
 function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -77,38 +78,7 @@ function Navbar({ fixed }) {
                 </form>
               </li>
               <li className="nav-item basis-1/5">
-                <button
-                  type="submit"
-                  className="flex items-center space-x-2 uppercase py-3 px-4 ml-5 font-medium border rounded-lg"
-                >
-                  <svg
-                    className="w-10 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Account</span>
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </button>
+                <Dropdown />
               </li>
               <li className="nav-item basis-1/5">
                 <p className="px-3 py-2 flex items-center text-xl hover:opacity-75">
