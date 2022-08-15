@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,10 +14,28 @@ import Shop from "./pages/Shop";
 export const AppContext = React.createContext(); // TODO: Replace with redux
 
 function App() {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const [newUser, setNewUser] = useState({
+    fname:'',
+    lname:'',
+    email:'',
+    password:'',
+    confirmPassword:'',
+    phoneNumber1:'',
+    phoneNumber2:'',
+  })
   useReducer();
 
   //Global States
-  const globalState = {};
+  const globalState = {
+    user,
+    setUser,
+    newUser,
+    setNewUser
+  };
 
   return (
     <AppContext.Provider value={globalState}>

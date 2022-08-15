@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../App";
 
 function RegisterForm() {
+  const {newUser, setNewUser} = useContext(AppContext)
+  const {fname, lname, email, password, confirmPassword, phoneNumber1, phoneNumber2} = newUser
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewUser({ ...newUser, [name]: value });
+  };
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    console.log(fname, lname, email, password, confirmPassword, phoneNumber1, phoneNumber2);
+  }
+
   return (
     <div>
       <div>
@@ -14,66 +27,73 @@ function RegisterForm() {
             <div className="logo-image">
               <img src="" alt="" />
             </div>
-            <form>
+            <form onSubmit={handleSubmit} >
               <div className="grid grid-cols-2 gap-4">
                 <input
+                name="fname"
+                value={fname}
                   type="text"
                   placeholder="First Name"
                   className="border-2 border-black-600  p-2 rounded mb-3"
+                  onChange={handleChange}
                 />
                 <input
+                name="lname"
+                value={lname}
                   type="text"
                   placeholder="Last Name"
                   className="border-2 border-black-600 p-2 rounded mb-3"
+                  onChange={handleChange}
                 />
               </div>
               <input
+              name="email"
+              value={email}
                 type="text"
                 placeholder="Email Address"
                 className="border-2 border-black-600 w-full p-2 rounded mb-3"
+                onChange={handleChange}
               />
               <div className="grid grid-cols-2 gap-4">
                 <input
+                name="password"
+                value={password}
                   type="password"
                   placeholder="Password"
                   className="border-2 border-black-600 p-2 rounded mb-3"
+                  onChange={handleChange}
                 />
                 <input
+                name="confirmPassword"
+                value={confirmPassword}
                   type="password"
                   placeholder="Confirm Password"
                   className="border-2 border-black-600 p-2 rounded mb-3"
+                  onChange={handleChange}
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
 
               <input
+              name="phoneNumber1"
+              value={phoneNumber1}
                 type="text"
                 placeholder="Phone Number 1"
                 className="border-2 border-black-600 p-2 rounded mb-3"
+                onChange={handleChange}
               />
 
               <input
+              name="phoneNumber2"
+              value={phoneNumber2}
                 type="text"
                 placeholder="Phone Number 2"
                 className="border-2 border-black-600 p-2 rounded mb-3"
-              />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-
-              <input
-                type="text"
-                placeholder="City"
-                className="border-2 border-black-600 p-2 rounded mb-3"
-              />
-
-              <input
-                type="text"
-                placeholder="State"
-                className="border-2 border-black-600 p-2 rounded mb-3"
+                onChange={handleChange}
               />
               </div>
               <div className="text-center mb-3 w-full">
-                <button className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75 w-full">
+                <button type="submit" className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75 w-full">
                   Create Account
                 </button>
               </div>

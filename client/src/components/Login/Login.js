@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../App";
 
 function LoginForm() {
+  const { user, setUser } = useContext(AppContext);
+  const { email, password } = user;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    console.log(email, password);
+  }
   return (
     <div>
       <div className="bg-[#051d4c] -mt-10 px-20 py-16 text-center text-white z-0">
@@ -13,12 +25,28 @@ function LoginForm() {
           <div className="logo-image">
             <img src="" alt="" />
           </div>
-          <form>
-            <input type="text" placeholder="Email Adddress" className="border-2 border-black-600 w-full p-2 rounded mb-3"/>
-            <input type="password" placeholder="Password" className="border-2 border-black-600 w-full p-2 rounded mb-3"/>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Email Adddress"
+              className="border-2 border-black-600 w-full p-2 rounded mb-3"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="border-2 border-black-600 w-full p-2 rounded mb-3"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
             <p className="text-center mb-3">Forgot password?</p>
             <div className="text-center mb-3">
-            <button className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75">Login</button>
+              <button type="submit" className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75">
+                Login
+              </button>
             </div>
           </form>
           <div className="signup text-center">
@@ -26,7 +54,7 @@ function LoginForm() {
               Don't have an account yet?
               <span>
                 <Link to="/register">
-                  <p className="underline">Create account</p>
+                  <span className="underline">Create account</span>
                 </Link>
               </span>
             </p>
