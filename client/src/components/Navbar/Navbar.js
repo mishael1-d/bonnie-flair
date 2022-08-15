@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <div>
+    <div className="sticky top-0 bg-white z-50">
       <nav className="mb-10 shadow-lg h-20">
         <div className="flex items-center px-20 py-2">
           <div className="basis-1/4">

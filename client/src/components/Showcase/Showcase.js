@@ -4,7 +4,7 @@ import Background from "../../assets/background/bg.png";
 function Showcase() {
   return (
     <>
-      <div className="flex text-2xl justify-between items-center relative basis-2/4 bg-[#051D4C] shadow-xl rounded-xl relative">
+      <div className="flex text-2xl justify-between items-center relative basis-2/4 bg-[#051D4C] shadow-xl rounded-xl">
         <div className="uppercase ml-8 text-white font-bold w-10">
           Latest Transparent Glasses
         </div>

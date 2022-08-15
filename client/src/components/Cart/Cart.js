@@ -7,7 +7,7 @@ function CartPage() {
 const delNotify = () => toast.error("Product has been removed from cart");
 const susNotify = () => toast.success("Product has been added to cart successfully");
   return (
-    <div className="mt-10">
+    <div className="mt-10 px-20">
       <ToastContainer/>
       <div className="flex px-20">
         <div className="cart basis-3/4 grid px-8 py-5 mr-4 shadow-xl rounded">
