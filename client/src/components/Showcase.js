@@ -15,7 +15,7 @@ function Showcase() {
         />
         <Link to='/shop'>
         <div className="absolute bottom-0 right-0">
-          <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
+          <button className="text-md bg-white text-black px-4 py-3 uppercase font-medium rounded-br-xl">
             Shop Now
           </button>
         </div>

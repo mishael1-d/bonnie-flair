@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { auth } from "../firebase-config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {useAuth} from "../context/AuthContext"
 
 function RegisterForm() {
-  const { newUser, setNewUser, setIsLoggedIn } = useContext(AppContext);
+  const { newUser, setNewUser } = useContext(AppContext);
   const {
     fname,
     lname,
@@ -18,40 +16,38 @@ function RegisterForm() {
     phoneNumber1,
     phoneNumber2,
   } = newUser;
-
-  const navigate = useNavigate();
+  const {register} = useAuth()
+  const [loading, setLoading] = useState(false);
+  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewUser({ ...newUser, [name]: value });
   };
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setIsLoggedIn(currentUser);
-  });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setNewUser({
-      fname: "",
-      lname: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      phoneNumber1: "",
-      phoneNumber2: "",
-    });
-    try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/");
-      console.log(user);
-    } catch (error) {
-      console.log(error);
+    if (password !== confirmPassword) {
+      const passwordMismatch = () => toast.error("Passwords do not match");
+      passwordMismatch();
+      return;
     }
+    try {
+      setLoading(true);
+      await register(email, password)
+      const accountSuccess = () =>
+        toast.success("Your account has been created successfully");
+      accountSuccess();
+    } catch (error) {
+      const accountFailed = () => toast.error(error.message);
+      accountFailed();
+    }
+    setLoading(false);
   };
 
   return (
     <div>
+      <ToastContainer />
       <div>
         <div className="bg-[#051d4c] -mt-10 px-20 py-16 text-center text-white z-0">
           <h3 className="font-semibold text-3xl">New User!!</h3>
@@ -121,7 +117,7 @@ function RegisterForm() {
                   name="phoneNumber2"
                   value={phoneNumber2}
                   type="text"
-                  placeholder="Phone Number 2"
+                  placeholder="Phone Number 2 (Optional)"
                   className="border-2 border-black-600 p-2 rounded mb-3"
                   onChange={handleChange}
                 />
@@ -129,6 +125,7 @@ function RegisterForm() {
               <div className="text-center mb-3 w-full">
                 <button
                   type="submit"
+                  disabled={loading}
                   className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75 w-full"
                 >
                   Create Account

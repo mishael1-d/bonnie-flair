@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import AuthProvider from "./context/AuthContext";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
@@ -19,15 +21,15 @@ function App() {
     password: "",
   });
   const [newUser, setNewUser] = useState({
-    fname:'',
-    lname:'',
-    email:'',
-    password:'',
-    confirmPassword:'',
-    phoneNumber1:'',
-    phoneNumber2:'',
-  })
-  const [isLoggedIn, setIsLoggedIn] = useState({})
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    phoneNumber1: "",
+    phoneNumber2: "",
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState({});
 
   //Global States
   const globalState = {
@@ -36,30 +38,40 @@ function App() {
     newUser,
     setNewUser,
     isLoggedIn,
-    setIsLoggedIn
+    setIsLoggedIn,
   };
 
   return (
     <AppContext.Provider value={globalState}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/shop" element={<Shop />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-          {/* TODO: Add catrgory route here */}
-          <Route
-            exact
-            path="/shop/:category/:productId"
-            element={<ProductDetails />}
-          />
-          {/* TODO: Create protected routing for cart, paymentStatus route */}
-          <Route exact path="/cart" element={<Cart />} />
-          <Route exact path="/payment-status?" element={<PaymentStatus />} />
-        </Routes>
-      </Router>
+      <div>
+          <Router>
+        <AuthProvider>
+            <Navbar />
+            {/* <AuthProvider> */}
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/shop" element={<Shop />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/register" element={<Register />} />
+              {/* TODO: Add catrgory route here */}
+              <Route
+                exact
+                path="/shop/:category/:productId"
+                element={<ProductDetails />}
+              />
+              {/* TODO: Create protected routing for cart, paymentStatus route */}
+              <Route exact path="/cart" element={<Cart />} />
+              <Route
+                exact
+                path="/payment-status?"
+                element={<PaymentStatus />}
+              />
+            </Routes>
+            {/* </AuthProvider> */}
+        </AuthProvider>
+          </Router>
+      </div>
     </AppContext.Provider>
   );
 }

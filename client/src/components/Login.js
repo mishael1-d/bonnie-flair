@@ -1,29 +1,33 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase-config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../context/AuthContext";
 
 function LoginForm() {
   const { user, setUser } = useContext(AppContext);
   const { email, password } = user;
-
+  const { login } = useAuth();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const handleSubmit = async (e)=>{
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password)
-      console.log(user)
+      await login(email, password);
+      const accountSuccess = () => toast.success("Login successfully");
+      accountSuccess();
     } catch (error) {
-      console.log(error)
+      const accountFailed = () => toast.error(error.message);
+      accountFailed();
     }
-    console.log(email, password);
-  }
+  };
+
   return (
     <div>
+      <ToastContainer />
       <div className="bg-[#051d4c] -mt-10 px-20 py-16 text-center text-white z-0">
         <h3 className="font-semibold text-3xl">Welcome Back!!</h3>
         <p>Please enter your details to continue</p>
@@ -52,7 +56,10 @@ function LoginForm() {
             />
             <p className="text-center mb-3">Forgot password?</p>
             <div className="text-center mb-3">
-              <button type="submit" className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75">
+              <button
+                type="submit"
+                className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75"
+              >
                 Login
               </button>
             </div>
