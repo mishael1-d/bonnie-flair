@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "../Dropdown/Dropdown";
-import {BsCart, BsSearch} from 'react-icons/bs'
+import Dropdown from "./Dropdown";
+import { BsCart, BsSearch } from "react-icons/bs";
 
 function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -42,7 +42,7 @@ function Navbar({ fixed }) {
             }
             id="example-navbar-danger"
           >
-            <ul className="flex basis-3/4 w-full flex-col items-center ml-auto lg:flex-row list-none">
+            <ul className="flex basis-4/4 w-full flex-col items-center ml-auto lg:flex-row list-none">
               <li className="nav-item basis-3/5">
                 <form className="flex items-center">
                   <label htmlFor="voice-search" className="sr-only">
@@ -50,11 +50,11 @@ function Navbar({ fixed }) {
                   </label>
                   <div className="relative w-full">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <BsSearch/>
+                      <BsSearch />
                     </div>
                     <input
                       type="text"
-                      className="w- border text-[#000] text-base rounded-lg pl-10 p-3"
+                      className="w-full border text-[#000] text-base rounded-lg pl-10 p-3"
                       placeholder="Search Products, Brands, Categories"
                       required=""
                     />
@@ -67,17 +67,19 @@ function Navbar({ fixed }) {
                   </button>
                 </form>
               </li>
-              <li className="nav-item basis-1/5">
+              <li className="nav-item basis-2/5">
                 <Dropdown />
               </li>
-              <Link to="/cart">
-                <li className="nav-item basis-1/5 cursor-pointer flex items-center ml-3">
-                  <span className="mr-2">
-                    <BsCart />
-                  </span>
-                  <span>Cart</span>
-                </li>
-              </Link>
+              <li className="nav-item cursor-pointer ml-auto">
+                <Link to="/cart">
+                  <div className="flex items-center">
+                    <span className="mr-2">
+                      <BsCart />
+                    </span>
+                    <span>Cart</span>
+                  </div>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

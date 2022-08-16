@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AppContext } from "../../App";
+import { AppContext } from "../App";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase-config";
 
 function LoginForm() {
   const { user, setUser } = useContext(AppContext);
@@ -10,8 +12,14 @@ function LoginForm() {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const handleSubmit = (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault()
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password)
+      console.log(user)
+    } catch (error) {
+      console.log(error)
+    }
     console.log(email, password);
   }
   return (

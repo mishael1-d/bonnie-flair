@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BeatLoader } from "react-spinners";
 
 
-import CartPage from "../components/Cart/Cart";
-import Footer from "../components/Footer/Footer";
+import CartPage from "../components/Cart";
+import Footer from "../components/Footer";
 
 function Cart() {
   const [loading, setLoading] = useState(true);

@@ -1,5 +1,5 @@
 import React from "react";
-import image1 from "../../assets/female-glasses/1.jpg";
+import image1 from "../assets/female-glasses/1.jpg";
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 function CartPage() {

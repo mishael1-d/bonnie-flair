@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Background from "../../assets/background/bg.png";
+import Background from "../assets/background/bg.png";
 function Showcase() {
   return (
     <>

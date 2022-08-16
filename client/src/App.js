@@ -1,7 +1,7 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
@@ -27,14 +27,16 @@ function App() {
     phoneNumber1:'',
     phoneNumber2:'',
   })
-  useReducer();
+  const [isLoggedIn, setIsLoggedIn] = useState({})
 
   //Global States
   const globalState = {
     user,
     setUser,
     newUser,
-    setNewUser
+    setNewUser,
+    isLoggedIn,
+    setIsLoggedIn
   };
 
   return (
