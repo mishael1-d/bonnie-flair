@@ -1,12 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AppContext } from "../App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {useAuth} from "../context/AuthContext"
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase-config";
+import { useAuth } from "../context/AuthContext";
+import { useAppState } from "../context/StateContext";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 function RegisterForm() {
-  const { newUser, setNewUser } = useContext(AppContext);
+  const { newUser, setNewUser } = useAppState();
   const {
     fname,
     lname,
@@ -16,9 +19,11 @@ function RegisterForm() {
     phoneNumber1,
     phoneNumber2,
   } = newUser;
-  const {register} = useAuth()
+  const { register } = useAuth();
   const [loading, setLoading] = useState(false);
-  // const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +39,24 @@ function RegisterForm() {
     }
     try {
       setLoading(true);
-      await register(email, password)
+      await register(email, password);
+      try {
+        const docRef = await addDoc(collection(db, "users"), {
+          fname,
+          lname,
+          email,
+          password,
+          phoneNumber1,
+          phoneNumber2,
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
       const accountSuccess = () =>
         toast.success("Your account has been created successfully");
       accountSuccess();
+      navigate("/");
     } catch (error) {
       const accountFailed = () => toast.error(error.message);
       accountFailed();
@@ -86,22 +105,40 @@ function RegisterForm() {
                 onChange={handleChange}
               />
               <div className="grid grid-cols-2 gap-4">
-                <input
-                  name="password"
-                  value={password}
-                  type="password"
-                  placeholder="Password"
-                  className="border-2 border-black-600 p-2 rounded mb-3"
-                  onChange={handleChange}
-                />
-                <input
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  type="password"
-                  placeholder="Confirm Password"
-                  className="border-2 border-black-600 p-2 rounded mb-3"
-                  onChange={handleChange}
-                />
+                <div className="w-full relative">
+                  <input
+                    name="password"
+                    value={password}
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className="relative border-2 border-black-600 p-2 rounded mb-3 w-full"
+                    onChange={handleChange}
+                  />
+                  <span
+                    className="absolute right-1 top-4 cursor-pointer"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword && <AiOutlineEyeInvisible />}
+                    {!showPassword && <AiOutlineEye />}
+                  </span>
+                </div>
+                <div className="w-full relative">
+                  <input
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Confirm Password"
+                    className="relative border-2 border-black-600 p-2 rounded mb-3 w-full"
+                    onChange={handleChange}
+                  />
+                  <span
+                    className="absolute right-1 top-4 cursor-pointer"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  >
+                    {showConfirmPassword && <AiOutlineEyeInvisible />}
+                    {!showConfirmPassword && <AiOutlineEye />}
+                  </span>
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <input

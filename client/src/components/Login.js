@@ -1,28 +1,50 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AppContext } from "../App";
+import React, { useState } from "react";
+
+// react router
+import { Link, useNavigate } from "react-router-dom";
+
+//toast notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// firebase auth
 import { useAuth } from "../context/AuthContext";
 
+// global app state in context API
+import { useAppState } from "../context/StateContext";
+
+// react icons
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+
 function LoginForm() {
-  const { user, setUser } = useContext(AppContext);
+  const { user, setUser } = useAppState();
   const { email, password } = user;
   const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
+
+  //handle change in input field
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
+
+  // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       await login(email, password);
       const accountSuccess = () => toast.success("Login successfully");
       accountSuccess();
+      navigate("/");
     } catch (error) {
       const accountFailed = () => toast.error(error.message);
       accountFailed();
     }
+    setLoading(false);
   };
 
   return (
@@ -46,20 +68,30 @@ function LoginForm() {
               value={email}
               onChange={handleChange}
             />
-            <input
-              type="password"
-              placeholder="Password"
-              className="border-2 border-black-600 w-full p-2 rounded mb-3"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                className="border-2 border-black-600 w-full p-2 rounded mb-3 relative"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+              <span
+                className="absolute right-2 top-4 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword && <AiOutlineEyeInvisible />}
+                {!showPassword && <AiOutlineEye />}
+              </span>
+            </div>
             <Link to="/forgot-password">
               <p className="text-center mb-3 underline">Forgot password?</p>
             </Link>
             <div className="text-center mb-3">
               <button
                 type="submit"
+                disabled={loading}
                 className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75"
               >
                 Login

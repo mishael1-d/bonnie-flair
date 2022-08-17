@@ -1,11 +1,21 @@
 import React from "react";
+
+//images
 import image1 from "../assets/female-glasses/1.jpg";
+
+// toast notification
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+
+
 function CartPage() {
 
+//product removed notification
 const delNotify = () => toast.error("Product has been removed from cart");
+
+// product added to cart toast notification
 const susNotify = () => toast.success("Product has been added to cart successfully");
+
   return (
     <div className="mt-10 px-20">
       <ToastContainer/>

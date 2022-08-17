@@ -1,26 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
+
+//react-icons
 import { BiUser } from "react-icons/bi";
 import { BsCaretDown } from "react-icons/bs";
 import { FaInbox } from "react-icons/fa";
+
+//react router
 import { Link } from "react-router-dom";
+
+//firebase auth
 import { useAuth } from "../context/AuthContext";
+
 function Dropdown() {
   const [showDropdown, setShowDropdown] = useState(false);
   const { currentUser, logout } = useAuth();
+
   const handleClick = () => {
     setShowDropdown(!showDropdown);
   };
 
   const ref = useRef(null);
-  useOnClickOutside(ref, () => setShowDropdown(false));
+  useEffect(() => listenForOnClickOutside(ref, setShowDropdown), [ref]);
 
+  //logout function
   const handleLogout = () => {
     logout();
     setShowDropdown(!showDropdown);
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center" ref={ref}>
       <div className="dropdown relative">
         {!currentUser ? (
           <button
@@ -57,25 +66,13 @@ function Dropdown() {
           <ul
             className=" min-w-max absolute bg-white text-lg z-50 float-left py-2 list-none text-left rounded-lg  shadow-lg mt-1 m-0 bg-clip-padding border-none absolute right-0"
             aria-labelledby="dropdownMenuButton1"
-            ref={ref}
           >
             {!currentUser ? (
               <>
                 <li className="p-6 border-b">
                   <Link to="/login">
                     <button
-                      className="
-                        rounded
-                        text-md
-                        text-white
-                        uppercase
-                        py-2
-                        px-4
-                        block
-                        w-full
-                        whitespace-nowrap
-                        bg-[#051D4C]
-                        "
+                      className="rounded text-md text-white uppercase py-2 px-4 block w-full whitespace-nowrap bg-[#051D4C]"
                       onClick={() => setShowDropdown(false)}
                     >
                       Sign in
@@ -103,18 +100,7 @@ function Dropdown() {
               <>
                 <li className="p-6 border-b">
                   <button
-                    className="
-                        rounded
-                        text-md
-                        text-white
-                        uppercase
-                        py-2
-                        px-4
-                        block
-                        w-full
-                        whitespace-nowrap
-                        bg-[#051D4C]
-                        "
+                    className="rounded text-md text-white uppercase py-2 px-4 block w-full whitespace-nowrap bg-[#051D4C]"
                     onClick={handleLogout}
                   >
                     Logout
@@ -145,21 +131,17 @@ function Dropdown() {
   );
 }
 
-function useOnClickOutside(ref, handler) {
-  useEffect(() => {
-    const listener = (e) => {
-      if (!ref.current || ref.current.contains(e.target)) {
-        return;
-      }
-      handler(e);
-    };
-    document.addEventListener("mousedown", listener);
-    document.addEventListener("touchstart", listener);
-    return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
-    };
-  }, [ref, handler]);
+// onOutsideClick functionality
+function listenForOnClickOutside(ref, setShowDropdown) {
+  return () => {
+    if (!ref.current) return;
+    [`click`, `touchstart`].forEach((type) => {
+      document.addEventListener(`click`, (evt) => {
+        if (ref.current.contains(evt.target)) return;
+        setShowDropdown(false);
+      });
+    });
+  };
 }
 
 export default Dropdown;

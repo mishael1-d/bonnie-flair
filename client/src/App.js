@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+
+// React router component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// Context import
+import StateProvider from "./context/StateContext";
 import AuthProvider from "./context/AuthContext";
+
+//Stylesheet
 import "./App.css";
+
+// Pages
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
@@ -12,48 +20,30 @@ import PaymentStatus from "./pages/PaymentStatus";
 import ProductDetails from "./pages/ProductDetails";
 import Register from "./pages/Register";
 import Shop from "./pages/Shop";
-import ForgotPassword from "./pages/ForgotPassword"
-
-export const AppContext = React.createContext(); // TODO: Replace with redux
+import ForgotPassword from "./pages/ForgotPassword";
+import ProtectedRoute from "./ProtectedRoutes";
+import LoginRoute from "./ProtectedRoutes/LoginRoute";
 
 function App() {
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-  const [newUser, setNewUser] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    phoneNumber1: "",
-    phoneNumber2: "",
-  });
-  const [isLoggedIn, setIsLoggedIn] = useState({});
-
-  //Global States
-  const globalState = {
-    user,
-    setUser,
-    newUser,
-    setNewUser,
-    isLoggedIn,
-    setIsLoggedIn,
-  };
-
   return (
-    <AppContext.Provider value={globalState}>
+    <StateProvider>
       <div>
-          <Router>
-        <AuthProvider>
+        <Router>
+          <AuthProvider>
             <Navbar />
-            {/* <AuthProvider> */}
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/shop" element={<Shop />} />
-              <Route exact path="/login" element={<Login />} />
+              <Route
+                exact
+                path="/login"
+                element={
+                  <LoginRoute>
+                    <Login />
+                  </LoginRoute>
+                }
+              />
               <Route exact path="/register" element={<Register />} />
               {/* TODO: Add catrgory route here */}
               <Route
@@ -62,19 +52,30 @@ function App() {
                 element={<ProductDetails />}
               />
               {/* TODO: Create protected routing for cart, paymentStatus route */}
-              <Route exact path="/cart" element={<Cart />} />
+              <Route
+                exact
+                path="/cart"
+                element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                }
+              />
               <Route
                 exact
                 path="/payment-status?"
                 element={<PaymentStatus />}
               />
-              <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
+              <Route
+                exact
+                path="/forgot-password"
+                element={<ForgotPassword />}
+              />
             </Routes>
-            {/* </AuthProvider> */}
-        </AuthProvider>
-          </Router>
+          </AuthProvider>
+        </Router>
       </div>
-    </AppContext.Provider>
+    </StateProvider>
   );
 }
 

@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+
+// react-router
 import { Link } from "react-router-dom";
+
+// dropdown component
 import Dropdown from "./Dropdown";
+
+// react icons
 import { BsCart, BsSearch } from "react-icons/bs";
 
 function Navbar({ fixed }) {
