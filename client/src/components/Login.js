@@ -7,6 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// spinners
+import { BeatLoader } from "react-spinners";
+
 // firebase auth
 import { useAuth } from "../context/AuthContext";
 
@@ -86,7 +89,9 @@ function LoginForm() {
               </span>
             </div>
             <Link to="/forgot-password">
-              <p className="text-center mb-3 underline">Forgot password?</p>
+              <p className="text-center mb-3 underline text-[#051d4c]">
+                Forgot password?
+              </p>
             </Link>
             <div className="text-center mb-3">
               <button
@@ -94,16 +99,18 @@ function LoginForm() {
                 disabled={loading}
                 className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75"
               >
-                Login
+                {loading ? <BeatLoader /> : "Login"}
               </button>
             </div>
           </form>
           <div className="signup text-center">
             <p>
               Don't have an account yet?
-              <span>
+              <span className="ml-2">
                 <Link to="/register">
-                  <span className="underline">Create account</span>
+                  <span className="underline text-[#051d4c]">
+                    Create account
+                  </span>
                 </Link>
               </span>
             </p>

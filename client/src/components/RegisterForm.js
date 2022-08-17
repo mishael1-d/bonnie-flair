@@ -1,15 +1,32 @@
 import React, { useState } from "react";
+
+// react router
 import { Link, useNavigate } from "react-router-dom";
+
+// toast notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// spinners
+import { BeatLoader } from "react-spinners";
+
+// firebase configuration
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
+
+// firebase auth configuration
 import { useAuth } from "../context/AuthContext";
+
+// app global state
 import { useAppState } from "../context/StateContext";
+
+// react icons
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 function RegisterForm() {
   const { newUser, setNewUser } = useAppState();
+
+  // destructuring variabbles in the newUser state
   const {
     fname,
     lname,
@@ -19,19 +36,24 @@ function RegisterForm() {
     phoneNumber1,
     phoneNumber2,
   } = newUser;
+
   const { register } = useAuth();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
+  // handle input field change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewUser({ ...newUser, [name]: value });
   };
 
+  // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // check if passwords match
     if (password !== confirmPassword) {
       const passwordMismatch = () => toast.error("Passwords do not match");
       passwordMismatch();
@@ -39,9 +61,12 @@ function RegisterForm() {
     }
     try {
       setLoading(true);
+
+      // call the register function
       await register(email, password);
       try {
-        const docRef = await addDoc(collection(db, "users"), {
+        // add this user to the users collection on the firestore database
+        await addDoc(collection(db, "users"), {
           fname,
           lname,
           email,
@@ -49,7 +74,6 @@ function RegisterForm() {
           phoneNumber1,
           phoneNumber2,
         });
-        console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
@@ -115,7 +139,7 @@ function RegisterForm() {
                     onChange={handleChange}
                   />
                   <span
-                    className="absolute right-1 top-4 cursor-pointer"
+                    className="absolute right-2 top-4 cursor-pointer"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword && <AiOutlineEyeInvisible />}
@@ -132,7 +156,7 @@ function RegisterForm() {
                     onChange={handleChange}
                   />
                   <span
-                    className="absolute right-1 top-4 cursor-pointer"
+                    className="absolute right-2 top-4 cursor-pointer"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword && <AiOutlineEyeInvisible />}
@@ -165,16 +189,16 @@ function RegisterForm() {
                   disabled={loading}
                   className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75 w-full"
                 >
-                  Create Account
+                  {loading ? <BeatLoader/> : "Create Account"}
                 </button>
               </div>
             </form>
             <div className="signup text-center">
               <p>
                 Have an account already?
-                <span>
+                <span className="ml-2">
                   <Link to="/login">
-                    <span className="underline">Login</span>
+                    <span className="underline text-[#051d4c]">Login</span>
                   </Link>
                 </span>
               </p>
