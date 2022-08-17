@@ -4,7 +4,8 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 const AuthContext = React.createContext();
@@ -22,6 +23,11 @@ const AuthProvider = ({ children }) => {
     });
     
   }, []);
+ 
+const actionCodeSettings = {
+  url: 'http://localhost:3000/login'
+};
+
 
   function register(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -33,11 +39,18 @@ const AuthProvider = ({ children }) => {
     return signOut(auth)
   }
 
+  function recovery(email){
+    return sendPasswordResetEmail(auth, email, actionCodeSettings);
+// Obtain code from user.
+// return confirmPasswordReset('user@example.com', code);
+  }
+
   const value = {
     currentUser,
     register,
     login,
-    logout
+    logout,
+    recovery
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

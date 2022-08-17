@@ -12,6 +12,7 @@ import PaymentStatus from "./pages/PaymentStatus";
 import ProductDetails from "./pages/ProductDetails";
 import Register from "./pages/Register";
 import Shop from "./pages/Shop";
+import ForgotPassword from "./pages/ForgotPassword"
 
 export const AppContext = React.createContext(); // TODO: Replace with redux
 
@@ -67,6 +68,7 @@ function App() {
                 path="/payment-status?"
                 element={<PaymentStatus />}
               />
+              <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
             </Routes>
             {/* </AuthProvider> */}
         </AuthProvider>

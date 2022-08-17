@@ -54,7 +54,9 @@ function LoginForm() {
               value={password}
               onChange={handleChange}
             />
-            <p className="text-center mb-3">Forgot password?</p>
+            <Link to="/forgot-password">
+              <p className="text-center mb-3 underline">Forgot password?</p>
+            </Link>
             <div className="text-center mb-3">
               <button
                 type="submit"
