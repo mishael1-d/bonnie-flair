@@ -60,13 +60,11 @@ function Dropdown() {
                         (
                             <ul
                         className="
-                        right-1
-                        w-64
                         absolute
                         bg-white
                         text-lg
                         z-50
-                        py-2
+                        pt-2 pb-5
                         list-none
                         text-left
                         rounded-lg
