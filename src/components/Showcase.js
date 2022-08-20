@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 function Showcase() {
   return (
     <>
-      <Carousel showArrows={false} showThumbs={false} showStatus={false} className="w-full">
+      <Carousel showArrows={false} infiniteLoop={true} autoPlay={true} showThumbs={false} showStatus={false} className="w-full rounded-xl">
         <div className="mx-5 md:mx-0 h-52 flex text-2xl justify-between items-center relative md:basis-2/4 bg-[#051D4C] shadow-xl rounded-xl">
           <div className="text-left uppercase ml-5 text-white font-bold w-20">
             Latest Transparent Glasses
