@@ -5,7 +5,7 @@ function Sidebar({ direction }) {
     <>
       {direction === "left" ? (
         <>
-          <div className="basis-1/4 grid pl-20 py-8 shadow-xl rounded-xl">
+          <div className="flex-none hidden basis-1/4 md:grid pl-10 lg:pl-20 py-8 shadow-xl rounded-xl">
             <h5 className="font-bold mb-5">Categories</h5>
             <p>Male</p>
             <p>Female</p>
@@ -15,7 +15,7 @@ function Sidebar({ direction }) {
         </>
       ) : (
         <>
-          <div className="basis-1/4 grid pl-20 py-8 shadow-xl rounded-xl">
+          <div className="flex-none hidden basis-1/4 md:grid pl-10 lg:pl-20 py-8 shadow-xl rounded-xl">
             <p className="font-bold mb-5">Categories</p>
             <p>Anti-Bluelight</p>
             <p>Rimless</p>
