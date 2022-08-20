@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Dropdown from "./Dropdown";
-import Modal from "./Modal";
+import Dropdown from "../Dropdown";
+import Mobilenavbar from "./Mobilenavbar";
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -31,7 +31,6 @@ function Navbar() {
             </div>
             
           </div>
-          {navbarOpen ?
           <ul className="flex basis-3/4 w-full justify-end items-center space-x-3 ml-auto list-none">
             <li className="nav-item">
               <form className="hidden sm:flex items-center space-x-3">
@@ -75,9 +74,8 @@ function Navbar() {
               </svg>
               <span className="hidden md:flex">Cart</span>
             </li>
-          </ul> :
-          <Modal handleClick={handleClick} />
-          } 
+          </ul>
+          {navbarOpen && <Mobilenavbar handleClick={handleClick} /> }
         </div>
       </nav>
     </div>

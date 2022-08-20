@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Dropdown() {
     const [showDropdown, setShowDropdown] = useState(false);
+
 
     const handleClick = () => {
         setShowDropdown(!showDropdown);
@@ -9,7 +10,7 @@ function Dropdown() {
     return(
         <>
             <div className="hidden md:flex justify-center">
-                <div className="dropdown relative">
+                <div className="relative">
                     <button
                     onClick={handleClick}
                         className="
@@ -25,7 +26,6 @@ function Dropdown() {
                         rounded-lg
                         shadow-sm
                         hover:bg-[#051D4C] hover:text-white
-                        focus:shadow-md focus:outline-none focus:ring-0
                         active:shadow-md
                         transition
                         duration-150
@@ -36,8 +36,8 @@ function Dropdown() {
                         type="button"
                         aria-expanded="false"
                     >
-                        <svg className="mr-2 w-4" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="black"/>
+                        <svg className="w-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                         </svg>
                         Account
                         <svg
@@ -60,21 +60,19 @@ function Dropdown() {
                         (
                             <ul
                         className="
-                        min-w-max
+                        right-1
+                        w-64
                         absolute
                         bg-white
                         text-lg
                         z-50
-                        float-left
                         py-2
                         list-none
                         text-left
                         rounded-lg
                         shadow-lg
-                        mt-1
-                        m-0
-                        bg-clip-padding
-                        border-none
+                        mt-2
+                        border-t
                         "
                         aria-labelledby="dropdownMenuButton1"
                     >
