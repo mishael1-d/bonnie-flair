@@ -33,7 +33,7 @@ const ForgotPassword = () => {
         <p>Please enter your email address to continue</p>
       </div>
       <div className="form-container shadow-xl w-2/6 flex justify-center align-center m-auto relative -top-10 z-50 bg-white rounded">
-        <div className="p-10">
+        <div className="p-10 w-full">
           <div className="logo-image">
             <img src="" alt="" />
           </div>

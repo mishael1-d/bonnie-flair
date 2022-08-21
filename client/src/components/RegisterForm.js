@@ -26,7 +26,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 function RegisterForm() {
   const { newUser, setNewUser } = useAppState();
 
-  // destructuring variabbles in the newUser state
+  // destructuring variables in the newUser state
   const {
     fname,
     lname,
@@ -41,6 +41,7 @@ function RegisterForm() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const navigate = useNavigate();
 
   // handle input field change
@@ -78,13 +79,17 @@ function RegisterForm() {
         console.error("Error adding document: ", e);
       }
       const accountSuccess = () =>
+
         toast.success("Your account has been created successfully");
       accountSuccess();
+
       navigate("/");
     } catch (error) {
+
       const accountFailed = () => toast.error(error.message);
       accountFailed();
     }
+    
     setLoading(false);
   };
 
@@ -110,6 +115,7 @@ function RegisterForm() {
                   placeholder="First Name"
                   className="border-2 border-black-600  p-2 rounded mb-3"
                   onChange={handleChange}
+                  required
                 />
                 <input
                   name="lname"
@@ -118,6 +124,7 @@ function RegisterForm() {
                   placeholder="Last Name"
                   className="border-2 border-black-600 p-2 rounded mb-3"
                   onChange={handleChange}
+                  required
                 />
               </div>
               <input
@@ -127,6 +134,7 @@ function RegisterForm() {
                 placeholder="Email Address"
                 className="border-2 border-black-600 w-full p-2 rounded mb-3"
                 onChange={handleChange}
+                required
               />
               <div className="grid grid-cols-2 gap-4">
                 <div className="w-full relative">
@@ -137,6 +145,7 @@ function RegisterForm() {
                     placeholder="Password"
                     className="relative border-2 border-black-600 p-2 rounded mb-3 w-full"
                     onChange={handleChange}
+                    required
                   />
                   <span
                     className="absolute right-2 top-4 cursor-pointer"
@@ -154,6 +163,7 @@ function RegisterForm() {
                     placeholder="Confirm Password"
                     className="relative border-2 border-black-600 p-2 rounded mb-3 w-full"
                     onChange={handleChange}
+                    required
                   />
                   <span
                     className="absolute right-2 top-4 cursor-pointer"
@@ -172,6 +182,7 @@ function RegisterForm() {
                   placeholder="Phone Number 1"
                   className="border-2 border-black-600 p-2 rounded mb-3"
                   onChange={handleChange}
+                  required
                 />
 
                 <input
@@ -189,7 +200,7 @@ function RegisterForm() {
                   disabled={loading}
                   className="text-center px-4 py-2 rounded bg-[#051d4c] text-white text-md hover:opacity-75 w-full"
                 >
-                  {loading ? <BeatLoader/> : "Create Account"}
+                  {loading ? <BeatLoader /> : "Create Account"}
                 </button>
               </div>
             </form>

@@ -23,6 +23,12 @@ import Shop from "./pages/Shop";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./ProtectedRoutes";
 import LoginRoute from "./ProtectedRoutes/LoginRoute";
+import Dashboard from "./pages/Dashboard";
+import AdminLayout from "./Layouts/AdminLayout";
+
+// Admin components
+import AdminPage from "./components/Admin/Home/Home";
+import Orders from "./components/Admin/Orders/Orders";
 
 function App() {
   return (
@@ -71,6 +77,27 @@ function App() {
                 path="/forgot-password"
                 element={<ForgotPassword />}
               />
+              <Route
+                exact
+                path="/my-account"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                exact
+                path="/admin"
+                element={
+                  // <ProtectedRoute>
+                  <AdminLayout />
+                  // </ProtectedRoute>
+                }
+              >
+                <Route path="/admin" index element={<AdminPage />} />
+                <Route path="/admin/orders" element={<Orders />} />
+              </Route>
             </Routes>
           </AuthProvider>
         </Router>

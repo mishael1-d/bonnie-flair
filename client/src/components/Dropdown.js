@@ -84,7 +84,9 @@ function Dropdown() {
                     <span className="mr-2">
                       <BiUser />
                     </span>
-                    <p>My Account</p>
+                    <Link to="/my-account">
+                      <p>My Account</p>
+                    </Link>
                   </div>
                 </li>
                 <li onClick={() => setShowDropdown(false)}>
