@@ -8,7 +8,7 @@ Whenver you're done with a to do item mark it as completed.
 
 ## Screenshots
 
-![Fix 1]('[./src/screenshots/fix1.png](https://github.com/balkissty/react-tailwind/blob/main/src/screenshots/fix1.png)')
+![Fix 1](https://github.com/balkissty/react-tailwind/blob/main/src/screenshots/fix1.png)
 ![Fix 2]('./src/screenshots/fix2.png')
 ![Fix 3]('./src/screenshots/fix3.png')
 
