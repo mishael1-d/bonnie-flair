@@ -22,6 +22,7 @@ Whenver you're done with a to do item mark it as completed.
     - onOutsideClick functionality to close modal when an outside element is clicked
 
 2. Categories component
+    - Adjust text on the heading of the component
     - Wrap all categories items in carousel container as shown in the first item in `fix 2` image
     - Reduce the image container padding
 
