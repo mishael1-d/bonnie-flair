@@ -17,7 +17,7 @@ Whenver you're done with a to do item mark it as completed.
 1. Mobile View (Navbar)
     - According to [fix 1]('./src/screenshots/fix1.png) image,
     - Make the height of the modal logo container the same as the parent navbar container
-    - Give more spacing between category list items and change the html tage from <p> to <li>
+    - Give more spacing between category list items and change the html tage from p to li
     - Make the position of the modal (mobile navbar) fixed // DONE 
     - onOutsideClick functionality to close modal when an outside element is clicked
 
