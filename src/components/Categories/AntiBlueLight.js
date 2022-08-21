@@ -1,4 +1,6 @@
 import React from 'react'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import Antiblue1 from "../../assets/anti-blue-light/1.jpg";
 import Antiblue2 from "../../assets/anti-blue-light/2.jpg";
 import Antiblue3 from "../../assets/anti-blue-light/3.jpg";
@@ -30,6 +32,7 @@ function AntiBlueLight() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-14 py-6">
+          <Carousel showArrows={false} autoPlay={false} showThumbs={false} showStatus={false} showIndicators={false}>
           <div className="text-left">
             <img
               className="object-contain aspect-square w-full"
@@ -74,6 +77,7 @@ function AntiBlueLight() {
               <p className="font-bold">$18</p>
             </div>
           </div>
+          </Carousel>
         </div>
       </div>
     </>
