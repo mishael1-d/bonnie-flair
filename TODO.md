@@ -29,3 +29,6 @@ Whenver you're done with a to do item mark it as completed.
 3. Footer section
     - Reduce the padding of the footer to align it's text the width of the other components
     - reference : `fix 3` image
+
+4. Responsiveness
+    - The web should also be responsive of medium-screen devices (tablets, iPads)
