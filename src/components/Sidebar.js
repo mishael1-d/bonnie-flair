@@ -5,23 +5,23 @@ function Sidebar({ direction }) {
     <>
       {direction === "left" ? (
         <>
-          <div className="flex-none hidden basis-1/4 md:grid pl-10 lg:pl-20 py-8 shadow-xl rounded-xl">
-            <h5 className="font-bold mb-5">Categories</h5>
-            <p>Male</p>
-            <p>Female</p>
-            <p>Kids</p>
-            <p>unisex</p>
-          </div>
+          <ul className="hidden basis-1/4 md:grid gap-1 pl-10 lg:pl-20 py-8 shadow-xl rounded-xl">
+            <li className="font-bold mb-5">Categories</li>
+            <li>Male</li>
+            <li>Female</li>
+            <li>Kids</li>
+            <li>unisex</li>
+          </ul>
         </>
       ) : (
         <>
-          <div className="flex-none hidden basis-1/4 md:grid pl-10 lg:pl-20 py-8 shadow-xl rounded-xl">
-            <p className="font-bold mb-5">Categories</p>
-            <p>Anti-Bluelight</p>
-            <p>Rimless</p>
-            <p>Night Vision</p>
-            <p>Luxury</p>
-          </div>
+          <ul className="hidden basis-1/4 gap-1 md:grid pl-5 lg:pl-14 py-8 shadow-xl rounded-xl">
+            <li className="font-bold mb-5">Categories</li>
+            <li>Anti-Bluelight</li>
+            <li>Rimless</li>
+            <li>Night Vision</li>
+            <li>Luxury</li>
+          </ul>
         </>
       )}
     </>

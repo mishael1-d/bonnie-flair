@@ -9,12 +9,12 @@ function Female() {
     <>
       <div className="mt-10 mx-5 md:mx-0 shadow-xl rounded-l-2xl">
         <div className="rounded-t-2xl md:rounded-tr-none bg-[#051D4C]">
-          <div className="px-5 md:px-10 lg:px-20 flex justify-between items-center py-5 text-white text-2xl">
+          <div className="px-5 md:px-10 lg:px-20 flex justify-between items-center py-5 text-white text-1xl md:text-2xl">
             <div>Female Glasses</div>
             <div className="flex justify-between items-center space-x-9">
               <p>See All</p>
               <svg
-                className="w-11 h-11"
+                className="w-7 h-7 md:w-11 md:h-11"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ function Female() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-20 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-10 py-12">
           <div className="space-y-3">
             <div className="">
               <img
