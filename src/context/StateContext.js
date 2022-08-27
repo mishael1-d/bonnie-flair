@@ -21,11 +21,11 @@ const StateProvider = ({ children }) => {
     phoneNumber2: "",
   });
   const [isLoggedIn, setIsLoggedIn] = useState({});
-  const [activeTab, setActiveTab] = useState("home")
+  const [activeTab, setActiveTab] = useState("home");
 
   const switchTab = (tab) => {
-    setActiveTab(tab)
-}
+    setActiveTab(tab);
+  };
 
   //Global States
   const globalState = {
@@ -37,7 +37,7 @@ const StateProvider = ({ children }) => {
     setIsLoggedIn,
     activeTab,
     setActiveTab,
-    switchTab
+    switchTab,
   };
 
   return (
