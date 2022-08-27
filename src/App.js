@@ -4,7 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Context import
-// import StateProvider from "./context/StateContext";
+import StateProvider from "./context/StateContext";
 // import AuthProvider from "./context/AuthContext";
 
 //Stylesheet
@@ -16,12 +16,12 @@ import Navbar from "./components/Navbar/Webnavbar";
 // import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 import PaymentStatus from "./pages/Payment";
 // import ProductDetails from "./pages/ProductDetails";
-// import Register from "./pages/Register";
+import Register from "./pages/Register";
 // import Shop from "./pages/Shop";
-// import ForgotPassword from "./pages/ForgotPassword";
+import ForgotPassword from "./pages/ForgotPassword";
 // import ProtectedRoute from "./ProtectedRoutes";
 // import LoginRoute from "./ProtectedRoutes/LoginRoute";
 // import Dashboard from "./pages/Dashboard";
@@ -33,13 +33,14 @@ import PaymentStatus from "./pages/Payment";
 
 function App() {
   return (
-    // <StateProvider>
+    <StateProvider>
     <div>
       <Router>
         {/* <AuthProvider> */}
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
           {/* <Route exact path="/about" element={<About />} />
               <Route exact path="/shop" element={<Shop />} />
               <Route
@@ -50,29 +51,29 @@ function App() {
                     <Login />
                   </LoginRoute>
                 }
-              />
+              />*/}
               <Route exact path="/register" element={<Register />} />
-              <Route
+              {/*<Route
                 exact
                 path="/shop/:productId"
                 element={<ProductDetails />}
               />*/}
-              <Route
-                exact
-                path="/cart"
-                element={
-                  // <ProtectedRoute>
-                    <Cart />
-                  // </ProtectedRoute>
-                }
-              /> 
+          <Route
+            exact
+            path="/cart"
+            element={
+              // <ProtectedRoute>
+              <Cart />
+              // </ProtectedRoute>
+            }
+          />
           <Route exact path="/payment-status" element={<PaymentStatus />} />
-          {/* <Route
+          <Route
                 exact
                 path="/forgot-password"
                 element={<ForgotPassword />}
               />
-              <Route
+             {/*  <Route
                 exact
                 path="/my-account"
                 element={
@@ -97,7 +98,7 @@ function App() {
         {/* </AuthProvider> */}
       </Router>
     </div>
-    // </StateProvider>
+    </StateProvider>
   );
 }
 

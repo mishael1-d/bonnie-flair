@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BeatLoader } from "react-spinners";
 
 // firebase auth
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 
 // global app state in context API
 import { useAppState } from "../context/StateContext";
@@ -22,7 +22,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 function LoginForm() {
   const { user, setUser } = useAppState();
   const { email, password } = user;
-  const { login } = useAuth();
+//   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -39,7 +39,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       setLoading(true);
-      await login(email, password);
+    //   await login(email, password);
       const accountSuccess = () => toast.success("Login successfully");
       accountSuccess();
       navigate("/");

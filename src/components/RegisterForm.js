@@ -11,11 +11,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { BeatLoader } from "react-spinners";
 
 // firebase configuration
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase-config";
+// import { collection, addDoc } from "firebase/firestore";
+// import { db } from "../firebase-config";
 
 // firebase auth configuration
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 
 // app global state
 import { useAppState } from "../context/StateContext";
@@ -37,7 +37,7 @@ function RegisterForm() {
     phoneNumber2,
   } = newUser;
 
-  const { register } = useAuth();
+  // const { register } = useAuth();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -64,17 +64,17 @@ function RegisterForm() {
       setLoading(true);
 
       // call the register function
-      await register(email, password);
+      // await register(email, password);
       try {
         // add this user to the users collection on the firestore database
-        await addDoc(collection(db, "users"), {
-          fname,
-          lname,
-          email,
-          password,
-          phoneNumber1,
-          phoneNumber2,
-        });
+        // await addDoc(collection(db, "users"), {
+        //   fname,
+        //   lname,
+        //   email,
+        //   password,
+        //   phoneNumber1,
+        //   phoneNumber2,
+        // });
       } catch (e) {
         console.error("Error adding document: ", e);
       }
