@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Modal({ handleClick }) {
   return (
@@ -17,10 +18,12 @@ function Modal({ handleClick }) {
               fill="#051D4C"
             />
           </svg>
-          <div className="ml-6 font-['Montserrat']">
-            <p className="font-normal">Bonnie's</p>{" "}
-            <p className="tracking-[.5em] font-bold">Flair</p>
-          </div>
+          <Link to="/">
+            <div className="ml-6 font-['Montserrat']">
+              <p className="font-normal">Bonnie's</p>{" "}
+              <p className="tracking-[.5em] font-bold">Flair</p>
+            </div>
+          </Link>
         </div>
 
         <div className="p-5 border-b-2">

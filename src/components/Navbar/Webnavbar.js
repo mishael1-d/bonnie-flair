@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 import Dropdown from "../Dropdown";
 import Mobilenavbar from "./Mobilenavbar";
 
@@ -24,10 +25,12 @@ function Navbar() {
                   </button>
             </div>
             <div className=" font-bold text-justify inline-block py-2 whitespace-nowrap">
+              <Link to='/'>
               <div>
                 <p className="font-['Montserrat'] font-normal">Bonnie's</p>{" "}
                 <p className="font-['Montserrat'] tracking-[.5em]">Flair</p>
               </div>
+              </Link>
             </div>
             
           </div>
