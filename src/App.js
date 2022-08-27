@@ -27,9 +27,9 @@ import ForgotPassword from "./pages/ForgotPassword";
 // import Dashboard from "./pages/Dashboard";
 
 // Admin components
-// import AdminLayout from "./Layouts/AdminLayout";
-// import AdminPage from "./components/Admin/Home/Home";
-// import Orders from "./components/Admin/Orders/Orders";
+import AdminLayout from "./Layouts/AdminLayout";
+import AdminPage from "./components/Admin/Home/Home";
+import Orders from "./components/Admin/Orders/Orders";
 
 function App() {
   return (
@@ -82,6 +82,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              */}
               <Route
                 exact
                 path="/admin"
@@ -93,7 +94,7 @@ function App() {
               >
                 <Route path="/admin" index element={<AdminPage />} />
                 <Route path="/admin/orders" element={<Orders />} />
-              </Route> */}
+              </Route>
         </Routes>
         {/* </AuthProvider> */}
       </Router>
