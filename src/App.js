@@ -14,7 +14,7 @@ import "./App.css";
 // import Navbar from "./components/Navbar";
 import Navbar from "./components/Navbar/Webnavbar";
 // import About from "./pages/About";
-// import Cart from "./pages/Cart";
+import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 // import Login from "./pages/Login";
 import PaymentStatus from "./pages/Payment";
@@ -56,16 +56,16 @@ function App() {
                 exact
                 path="/shop/:productId"
                 element={<ProductDetails />}
-              />
+              />*/}
               <Route
                 exact
                 path="/cart"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <Cart />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
-              /> */}
+              /> 
           <Route exact path="/payment-status" element={<PaymentStatus />} />
           {/* <Route
                 exact
