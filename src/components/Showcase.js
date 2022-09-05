@@ -1,18 +1,16 @@
 import Background from '../assets/background/bg.png';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+
 
 function Showcase() {
   return (
     <>
-      <Carousel showArrows={false} autoPlay={true} showThumbs={false} showStatus={false} infiniteLoop={true} className="w-full rounded-xl">
-        <div className="mx-5 md:mx-0 h-64 flex text-2xl justify-between items-center relative md:basis-2/4 bg-[#051D4C] shadow-xl rounded-xl">
+      <div className="mx-5 md:mx-10 lg:mx-0 h-56 lg:h-auto flex text-2xl justify-between items-center relative lg:basis-2/4 w-full bg-[#051D4C] shadow-xl  rounded-xl">
           <div className="text-left uppercase ml-5 text-white font-bold w-20">
             Latest Transparent Glasses
           </div>
           <img
-            className="object-contain h-48"
+            className="absolute bg-fixed left-36 sm:left-52 md:left-58 object-contain h-48"
             src={Background}
             alt="hands up with glasses"
           />
@@ -21,72 +19,7 @@ function Showcase() {
               Shop Now
             </button>
           </div>
-        </div>
-
-        <div className="mx-5 md:mx-0 h-64 flex text-2xl justify-between items-center relative md:basis-2/4 bg-purple-500 shadow-xl rounded-xl">
-          <div className="text-left uppercase ml-5 text-white font-bold w-20">
-            Luxury Acetate Glasses
-          </div>
-          <img
-            className="object-contain h-48"
-            src={Background}
-            alt="hands up with glasses"
-          />
-          <div className="absolute bottom-0 right-0 hidden sm:flex">
-            <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
-              Shop Now
-            </button>
-          </div>
-        </div>
-
-        <div className="mx-5 md:mx-0 h-64 flex text-2xl justify-between items-center relative md:basis-2/4 bg-green-700 shadow-xl rounded-xl">
-          <div className="uppercase text-left ml-5 text-white font-bold w-20">
-            Exotic Sun Shades
-          </div>
-          <img
-            className="object-contain h-48"
-            src={Background}
-            alt="hands up with glasses"
-          />
-          <div className="absolute bottom-0 right-0 hidden sm:flex">
-            <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
-              Shop Now
-            </button>
-          </div>
-        </div>
-
-        <div className="mx-5 md:mx-0 h-64 flex text-2xl justify-between items-center relative md:basis-2/4 bg-yellow-900 shadow-xl rounded-xl">
-          <div className="text-left uppercase ml-5 text-white font-bold w-20">
-            Latest Transparent Glasses
-          </div>
-          <img
-            className="object-contain h-48"
-            src={Background}
-            alt="hands up with glasses"
-          />
-          <div className="absolute bottom-0 right-0 hidden sm:flex">
-            <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
-              Shop Now
-            </button>
-          </div>
-        </div>
-
-        <div className="mx-5 md:mx-0 h-64 flex text-2xl justify-between items-center relative md:basis-2/4 bg-pink-500 shadow-xl rounded-xl">
-          <div className="text-left uppercase ml-5 text-white font-bold w-20">
-            Luxury Acetate Glasses
-          </div>
-          <img
-            className="object-contain h-48"
-            src={Background}
-            alt="hands up with glasses"
-          />
-          <div className="absolute bottom-0 right-0 hidden sm:flex">
-            <button className="text-xl bg-white text-black px-4 py-3 uppercase font-semibold rounded-br-xl">
-              Shop Now
-            </button>
-          </div>
-        </div>
-      </Carousel>
+      </div>
     </>
   )
 }

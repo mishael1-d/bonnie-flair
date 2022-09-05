@@ -24,7 +24,7 @@ function Home() {
       ) : (
         <>
           <Searchbar />
-          <div className="flex justify-between text-justify md:space-x-8 text-1xl md:ml-1">
+          <div className="flex justify-between text-justify lg:space-x-8 text-1xl md:ml-1">
             <Sidebar direction="left" />
             <Showcase />
             <Sidebar direction="right" />

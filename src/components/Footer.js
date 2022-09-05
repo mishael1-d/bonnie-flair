@@ -7,7 +7,7 @@ function Footer() {
   }
   return (
     <>
-         <footer className="mt-10 bg-black text-white py-10 px-10 lg:px-20">
+      <footer className="mt-10 bg-black text-white py-10 px-5 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 lg:gap-40">
           <div className="">
             <div className="text-1xl mb-4 font-bold font-['Montserrat']">

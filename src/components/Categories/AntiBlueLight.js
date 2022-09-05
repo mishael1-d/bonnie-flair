@@ -1,5 +1,4 @@
 import React from 'react'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Antiblue1 from "../../assets/anti-blue-light/1.jpg";
 import Antiblue2 from "../../assets/anti-blue-light/2.jpg";
 import Antiblue3 from "../../assets/anti-blue-light/3.jpg";
