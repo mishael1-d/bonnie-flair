@@ -14,6 +14,7 @@ import { useAuth } from "../context/AuthContext";
 function Dropdown() {
   const [showDropdown, setShowDropdown] = useState(false);
   const { currentUser, logout } = useAuth();
+  console.log(currentUser);
 
   const handleClick = () => {
     setShowDropdown(!showDropdown);
@@ -56,7 +57,7 @@ function Dropdown() {
             <span>
               <BiUser />
             </span>
-            <span className="mx-2">Hi</span>
+            <span className="mx-2">Hi </span>
             <span>
               <BsCaretDown />
             </span>

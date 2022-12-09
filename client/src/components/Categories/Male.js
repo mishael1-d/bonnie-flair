@@ -1,16 +1,20 @@
 import React from "react";
-import Male2 from "../../assets/male-glasses/2.jpg";
+import Male1 from "../../assets/male-glasses/1.jpeg";
+import Male2 from "../../assets/male-glasses/2.jpeg";
+import Male3 from "../../assets/male-glasses/3.jpeg";
+import Male4 from "../../assets/male-glasses/4.jpeg";
+import Male5 from "../../assets/male-glasses/5.jpeg";
 function Male() {
   return (
     <>
-      <div className="mt-10 shadow-xl rounded-l-2xl ml-1 relative">
-        <div className="bg-[#051D4C] rounded-tl-2xl">
-          <div className="flex justify-between items-center px-20 py-5 text-white text-xl">
-            <div>Male Glasses</div>
-            <div className="flex justify-between items-center space-x-5 cursor-pointer">
+      <div className="mt-10 mx-5 md:mx-0 shadow-xl rounded-2xl">
+        <div className="bg-[#051D4C] rounded-t-2xl ">
+          <div className="flex justify-between items-center px-5 md:px-10 lg:px-20 py-5 text-white text-1xl md:text-2xl">
+            <p className="flex flex-wrap">Male Glasses</p>
+            {/* <div className="flex justify-between items-center space-x-8">
               <p>See All</p>
               <svg
-                className="w-11 h-11"
+                className="w-7 h-7 md:w-11 md:h-11"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -19,64 +23,79 @@ function Male() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={1}
+                  strokeWidth={2}
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="flex justify-between px-14 py-12 space-x-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 px-5 py-6">
           <div className="text-left">
-            <div className="h-50 w-60 mb-4">
-              <img
-                className="w-full"
-                src={Male2}
-                alt="anti-blue light glasses"
-              />
-            </div>
-            <div className="w-60 text-1xl">
-              <p className=" mb-3">TECH stylish sophisticated sunglasses</p>
-              <p className="font-bold">$14</p>
+            <img
+              className="object-cover aspect-square w-full"
+              src={Male1}
+              alt="anti-blue light glasses"
+            />
+            <div className="mt-3">
+              <p className="mb-3 flex flex-wrap">
+                Rimless Professional Male Glasses
+              </p>
+              <p className="font-bold">&#8358;6000</p>
             </div>
           </div>
           <div className="text-left">
-            <div className="h-50 w-60 mb-4">
-              <img
-                className="w-full"
-                src={Male2}
-                alt="anti-blue light glasses"
-              />
-            </div>
-            <div className="w-60 text-1xl">
-              <p className=" mb-3">Classic men squared polarized sunglasses</p>
-              <p className="font-bold">$22</p>
-            </div>
-          </div>
-          <div className="text-left">
-            <div className="h-50 w-60 mb-4">
-              <img
-                className="w-full"
-                src={Male2}
-                alt="anti-blue light glasses"
-              />
-            </div>
-            <div className="w-60 text-1xl">
-              <p className="mb-3">Classic designer sunshades for men</p>
-              <p className="font-bold">$12</p>
+            <img
+              className="object-cover aspect-square w-full"
+              src={Male2}
+              alt="anti-blue light glasses"
+            />
+
+            <div className="mt-3">
+              <p className="mb-3 flex flex-wrap">
+                Vintage Square Metal Frame Eyeglasses
+              </p>
+              <p className="font-bold">&#8358;5000</p>
             </div>
           </div>
           <div className="text-left">
-            <div className="h-50 w-60 mb-4">
-              <img
-                className="w-full"
-                src={Male2}
-                alt="anti-blue light glasses"
-              />
+            <img
+              className="object-cover aspect-square w-full"
+              src={Male3}
+              alt="anti-blue light glasses"
+            />
+
+            <div className="mt-3">
+              <p className="mb-3 flex flex-wrap">
+                Fashion vintage metal frame sunglasses
+              </p>
+              <p className="font-bold">&#8358;5000</p>
             </div>
-            <div className="w-60 text-1xl">
-              <p className="mb-3">TECH stylish sophisticated sunglasses</p>
-              <p className="font-bold">$18</p>
+          </div>
+          <div className="text-left">
+            <img
+              className="object-cover aspect-square w-full"
+              src={Male4}
+              alt="anti-blue light glasses"
+            />
+
+            <div className="mt-3">
+              <p className="mb-3 flex flex-wrap">Flat Top Shield Sunglasses</p>
+              <p className="font-bold">&#8358;5000</p>
+            </div>
+          </div>
+          <div className="text-left">
+            <img
+              className="object-cover aspect-square w-full"
+              src={Male5}
+              alt="anti-blue light glasses"
+            />
+
+            <div className="mt-3">
+              <p className="mb-3 flex flex-wrap">
+                Retro Frameless Sunglasses
+              </p>
+              <p className="font-bold">&#8358;6000</p>
             </div>
           </div>
         </div>
