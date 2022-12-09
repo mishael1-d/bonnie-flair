@@ -11,7 +11,7 @@ import AuthProvider from "./context/AuthContext";
 import "./App.css";
 
 // Pages
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Webnavbar";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
